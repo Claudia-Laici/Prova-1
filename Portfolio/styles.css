@@ -49,7 +49,8 @@ header {
   gap: 5px;
   padding: 5px;
   justify-content: space-between;
-  height: 100vh;
+  height: 320px;
+  border-radius: 50px;
   align-items: center;
   width: 70px;
 }

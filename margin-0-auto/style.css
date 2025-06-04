@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgb(155, 181, 204);
+    width: 75%;
+    margin: 0 auto;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: blueviolet;
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.round {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(216, 17, 17);
+    position: absolute;
+    right: 720px;
+    top: 130px;
+}

@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: rgb(224, 224, 224);
+  --primary-color: #6946b6;
+  --secondary-color: #b29fec;
+  --accent-color: #57c785;
+  --highlight-color: #000000;
+}
+
+h1 {
+  text-align: center;
+  margin: 5px;
+  font-family: "Amatic SC", sans-serif;
+  color: var(--primary-color);
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  gap: 10px;
+  padding: 10px;
+}
+
+.box:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+ul {
+  margin-top: 30px;
+  font-weight: 800;
+  font-family: "Amatic SC", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style-type: none;
+  text-align: center;
+}
+
+.button-container {
+  font-family: "Amatic SC", sans-serif;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  padding: 10px;
+}
+
+input {
+  font-weight: 800;
+  font-family: "Amatic SC", sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0.8px solid var(--primary-color);
+}
+
+input:hover {
+  outline: dotted 0.7px rgb(240, 107, 12);
+  transform: translateY(-2px) scale(1.02);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 4px rgba(195, 55, 211, 0.2);
+}
+
+input:focus {
+  outline: dotted 0.7px rgb(240, 107, 12);
+}
+
+button {
+  font-weight: 800;
+  font-family: "Amatic SC", sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0.8px solid var(--primary-color);
+}
+
+button:hover {
+  outline: dotted 0.7px rgb(240, 107, 12);
+  transform: translateY(-2px) scale(1.02);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 4px rgba(195, 55, 211, 0.2);
+  cursor: pointer;
+}
+
+/*PATTERN*/
+
+/* Griglia di punti piccoli e fitti */
+.dots-background {
+  background: linear-gradient(135deg, #ea8e66 0%, #764ba2 100%);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(141, 151, 106, 0.7) 1px,
+    transparent 0
+  );
+  background-size: 5px 5px;
+}

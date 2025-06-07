@@ -47,7 +47,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 5px;
   justify-content: space-between;
   height: 320px;
   border-radius: 50px;

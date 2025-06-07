@@ -93,3 +93,25 @@ const eseguiOperazione1 = (a, b, operazione) => operazione(a, b);
 
 console.log(eseguiOperazione1(10, 4, somma1)); // Stampa 14
 console.log(eseguiOperazione1(10, 7, sottrazione1)); // Stampa 3
+
+const libro = {
+    titolo: "Il Signore degli Anelli",
+    autore: "J.R.R. Tolkien",   
+    annoPubblicazione: 1954,
+};
+
+console.log(libro.titolo); // Stampa "Il Signore degli Anelli"
+console.log(libro.autore); // Stampa "J.R.R. Tolkien"
+console.log(libro.annoPubblicazione); // Stampa 1954
+
+let persona = {
+    nome : "Mario",
+    cognome : "Rossi",
+    saluta: function() {
+        console.log(`Ciao, mi chiamo ${this.nome} ${this.cognome}!`);
+    }   
+}
+
+console.log(persona.nome); // Stampa "Mario"
+console.log(persona.cognome); // Stampa "Rossi"
+persona.saluta(); // Stampa "Ciao, mi chiamo Mario Rossi!"

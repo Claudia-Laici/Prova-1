@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --background-color: rgb(224, 224, 224);
+  --primary-color: #2a7b9b;
+  --secondary-color: #50bb88;
+  --accent-color: #57c785;
+  --highlight-color: #000000;
+}
+
+/*Colori dei font*/
+h1 {
+  font-size: 30px;
+  font-family: "Amatic SC", sans-serif;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 16px;
+  font-family: "Amatic SC", sans-serif;
+  color: var(--highlight-color);
+}
+
+body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 100px;
+    text-align: left;
+   
+}
+
+header{
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container{
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(239, 237, 237);
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  gap: 20px;
+  padding: 30px 20px 40px 20px;
+  bottom: 20px;
+  color: rgb(95, 158, 160);
+}
+
+.container:hover {
+     transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.container .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+
+

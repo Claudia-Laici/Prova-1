@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <title>Esempio DOM</title>
+    <style>
+      .evidenziato { background-color: yellow; }
+      .nascosto { display: none; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="titolo-principale">Benvenuto nel DOM</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#servizi">Servizi</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="contenuto">
+        <h2>Introduzione</h2>
+        <p class="intro">Questo è un paragrafo introduttivo.</p>
+        <p class="descrizione">Descrizione dettagliata del contenuto.</p>
+
+        <div class="container">
+          <ul id="lista-elementi">
+            <li data-id="1">Primo elemento</li>
+            <li data-id="2">Secondo elemento</li>
+            <li data-id="3">Terzo elemento</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Tutti i diritti riservati</p>
+    </footer>
+
+    <script>
+      // Aspetta che il DOM sia completamente caricato
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('=== ESERCIZIO 2.1: SELEZIONI MULTIPLE ===\n');
+
+        // 1. Selezionare tutti gli elementi <a> nella pagina
+        console.log("=== 1. Tutti gli elementi <a> ===");
+        const tuttiLink = document.querySelectorAll('a');
+        console.log(`Numero di link trovati: ${tuttiLink.length}`);
+        
+        // Mostriamo anche il contenuto e href di ogni link
+        tuttiLink.forEach((link, index) => {
+          console.log(`Link ${index + 1}: "${link.textContent}" -> ${link.getAttribute('href')}`);
+        });
+
+        // 2. Contare quanti paragrafi ci sono
+        console.log("\n=== 2. Conteggio paragrafi ===");
+        const paragrafi = document.querySelectorAll('p');
+        console.log(`Numero di paragrafi: ${paragrafi.length}`);
+
+        // Mostriamo anche il contenuto di ogni paragrafo
+        paragrafi.forEach((p, index) => {
+          console.log(`Paragrafo ${index + 1}: "${p.textContent.trim()}"`);
+        });
+
+        // 3. Trovare tutti gli elementi che hanno un attributo data-id
+        console.log("\n=== 3. Elementi con attributo data-id ===");
+        const elementiConDataId = document.querySelectorAll('[data-id]');
+        console.log(`Numero di elementi con data-id: ${elementiConDataId.length}`);
+
+        // Mostriamo gli elementi e i loro valori data-id
+        elementiConDataId.forEach((elemento, index) => {
+          console.log(`Elemento ${index + 1}: "${elemento.textContent}" (data-id: ${elemento.getAttribute('data-id')})`);
+        });
+
+        // 4. Selezionare solo i link che portano a sezioni interne (href inizia con #)
+        console.log("\n=== 4. Link interni (href inizia con #) ===");
+        const linkInterni = document.querySelectorAll('a[href^="#"]');
+        console.log(`Numero di link interni: ${linkInterni.length}`);
+
+        // Mostriamo i link interni
+        linkInterni.forEach((link, index) => {
+          console.log(`Link interno ${index + 1}: "${link.textContent}" -> ${link.getAttribute('href')}`);
+        });
+
+        // === RIEPILOGO RISULTATI ===
+        console.log("\n=== RIEPILOGO ===");
+        console.log(`1. Elementi <a>: ${tuttiLink.length}`);
+        console.log(`2. Paragrafi <p>: ${paragrafi.length}`);
+        console.log(`3. Elementi con data-id: ${elementiConDataId.length}`);
+        console.log(`4. Link interni: ${linkInterni.length}`);
+
+        // Aggiungiamo anche un output visibile nella pagina
+        const risultati = document.createElement('div');
+        risultati.innerHTML = `
+          <h3>Risultati Esercizio 2.1:</h3>
+          <ul>
+            <li>Elementi &lt;a&gt;: ${tuttiLink.length}</li>
+            <li>Paragrafi &lt;p&gt;: ${paragrafi.length}</li>
+            <li>Elementi con data-id: ${elementiConDataId.length}</li>
+            <li>Link interni: ${linkInterni.length}</li>
+          </ul>
+          <p><em>Controlla la console (F12) per i dettagli completi!</em></p>
+        `;
+        risultati.style.cssText = 'margin: 20px; padding: 15px; border: 2px solid #333; background-color: #f0f0f0;';
+        document.body.appendChild(risultati);
+      });
+    </script>
+  </body>
+</html>

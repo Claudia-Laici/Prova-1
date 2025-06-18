@@ -1,3 +1,5 @@
+import './GameCard.css';
+
 const GameCard = ({ gioco }) => {
   // Funzioni helper
   const getRatingColor = (rating) => {

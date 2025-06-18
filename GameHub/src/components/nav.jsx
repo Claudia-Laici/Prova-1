@@ -1,25 +1,3 @@
-/* const Navigation = ({ activeTab, setActiveTab }) => {
-    const handleTabClick = (tab) => {
-        setActiveTab(tab);
-    };
-
-    return (
-        <nav>
-            <ul className="navigation-tabs">
-                {["Tutti", "Completati", "In Corso", "Wishlist", "Abbandonati"].map((tab) => (
-                    <li
-                        key={tab}
-                        className={activeTab === tab ? "active" : ""}
-                        onClick={() => handleTabClick(tab)}
-                    >
-                        {tab}
-                    </li>
-                ))}
-            </ul>
-        </nav>
-    );
-}; */
-
 const tabs = [
 
 {label:"Tutti", value : "Tutti"},
@@ -32,7 +10,7 @@ const tabs = [
 
 const getTabClass = (isActive) => isActive ? "active-tab" : "idle-tab";
 
-function Navigation({activeTab, setActiveTab}) {
+function Navigation({activeTab, setActiveTab}){
     return (
         <nav className = "navigation">{
             tabs.map((tab) => (
@@ -49,5 +27,5 @@ function Navigation({activeTab, setActiveTab}) {
     )
 }
 
-export default Navigation
+export default Navigation;
 

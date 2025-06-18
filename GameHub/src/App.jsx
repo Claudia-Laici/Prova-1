@@ -13,19 +13,17 @@ function App() {
 
   // Funzione per filtrare i giochi in base al tab
   const getFilteredGames =
-    activeTab === "Tutti"
-      ? giochi
-      : giochi.filter((gioco) => gioco.status === activeTab);
+    activeTab === "Tutti" ? giochi: giochi.filter((gioco) => gioco.status === activeTab);
 
   return (
     <div className="Card">
-      <Header totalGames={giochi.length} gamerTag={gamerTag} />
+      <Header gamerTag={gamerTag} totalGames={giochi.length} />
 
       <header className="Card-header">
         <h1>La Mia Libreria Videogiochi</h1>
       </header>
 
-      <navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       <GameList giochi={getFilteredGames} />
 
     </div>

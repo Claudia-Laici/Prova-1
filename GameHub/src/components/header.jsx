@@ -14,4 +14,4 @@ function Header({gamerTag, totalGames}) {
 }
 
 
-export default Header
+export default Header;

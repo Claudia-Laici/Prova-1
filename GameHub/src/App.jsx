@@ -4,6 +4,7 @@ import { getAllGames } from "./data/mockData.js";
 import Header from "./components/header.jsx";
 import GameList from "./components/GameList.jsx";
 import Navigation from "./components/nav.jsx";
+import GameStats from "./components/gameStats.jsx";
 
 function App() {
   const giochi = getAllGames();
@@ -21,7 +22,9 @@ function App() {
 
       <header className="Card-header">
         <h1>La Mia Libreria Videogiochi</h1>
-      </header>
+
+        < GameStats giochi={giochi}/> 
+      </header> 
 
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       <GameList giochi={getFilteredGames} />

@@ -1,18 +1,56 @@
-/* - Componente `GameCard.js` con props base
-- Cover image (300x400), titolo, genere
-- Voto numerico colorato (verde >8, giallo 6-8, rosso <6)
-- Badge colorato per stato (completato=verde, in-corso=giallo, wishlist=blu, abbandonato=grigio) */
+const GameCard = ({ gioco }) => {
+  // Funzioni helper
+  const getRatingColor = (rating) => {
+    if (rating >= 9) return 'excellent';
+    if (rating >= 8) return 'good';
+    if (rating >= 7) return 'decent';
+    return 'poor';
+  };
 
-const GameCard = ({ cover, title, genre, rating, status }) => {
-    return (
-        <div className="game-card">
-            <img src={cover} alt={title} />
-            <h3>{title}</h3>
-            <p>Genere: {genre}</p>
-            <p>Voto: {rating}</p>
-            <p>Stato: {status}</p>
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'completato':
+        return 'completed';
+      case 'in corso':
+        return 'playing';
+      case 'non iniziato':
+        return 'not-started';
+      default:
+        return 'default';
+    }
+  };
+
+  const formatStatus = (status) => {
+    switch (status) {
+      case 'completato':
+        return 'Completato';
+      case 'in corso':
+        return 'In Corso';
+      case 'non iniziato':
+        return 'Non Iniziato';
+      default:
+        return status;
+    }
+  };
+
+  return (
+    <div className="game-card">
+      <img src={gioco.cover} alt={gioco.title} />
+      <div className="card-content">
+        <h3>{gioco.title}</h3>
+        <p className="genre">Genere: {gioco.genre}</p>
+        
+        <div className="card-meta">
+          <span className={`rating ${getRatingColor(gioco.rating)}`}>
+            {gioco.rating}/10
+          </span>
+          <span className={`status-badge ${getStatusColor(gioco.status)}`}>
+            {formatStatus(gioco.status)}
+          </span>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default GameCard;

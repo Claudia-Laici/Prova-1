@@ -1,43 +1,27 @@
 import { useState } from "react";
 import "./App.css";
 import { getAllGames } from "./data/mockData.js";
-import  Header from "./components/header.jsx";
-import GameCard from "./components/GameCard.jsx";
+import Header from "./components/header.jsx";
+import GameList from "./components/GameList.jsx";
 
 function App() {
   const giochi = getAllGames();
-  const gamerTag = "Chandra"
+  const gamerTag = "Chandra";
 
-    return (
-    <Header totalGames={giochi.length} gamerTag={gamerTag}/>
-    )
-
-    return (
+  return (
     <div className="Card">
+      <Header totalGames={giochi.length} gamerTag={gamerTag} />
+      
       <header className="Card-header">
         <h1>La Mia Libreria Videogiochi</h1>
       </header>
       
-      <main className="games-container">
-        {games.map(game => (
-          <GameCard
-            key={game.id}
-            cover={game.cover}
-            title={game.title}
-            genre={game.genre}
-            rating={game.rating}
-            status={game.status}
-          />
-        ))}
+     <main className="games-container">
+        <GameList giochi={giochi} />
       </main>
     </div>
   );
+}
 
-  }
-
-
-
-
-  
 
 export default App;

@@ -1,14 +1,50 @@
-header style{
-background-color: #1a1a1a; 
-color: #ff00ff; 
+.header-style {
+  background-color: #1a1a1a;
+  color: #ff00ff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 30px;
 }
 
 .title-style {
-background-color: #1a1a1a; 
-color: #ff00ff; 
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.title-style h1 {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border-radius: 8px;
+  font-size: 50px;
+  font-weight: 600;
+  color: #ff00ff;
+}
+
+.gamer-tag {
+  display: flex;
+  background: linear-gradient(135deg, #df6bff, #ee24d6);
+  padding: 6px 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transform: rotate(-5deg);
+  margin-left: 25px;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: white;
+  background-clip: initial;
 }
 
 .gamerTag-style {
-background-color: #1a1a1a; 
-color: #ff00ff; 
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #4ecdc4;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gamerTag-style b {
+  color: #4ecdc4;
+  font-size: 22px;
 }

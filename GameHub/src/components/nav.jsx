@@ -1,3 +1,5 @@
+import './nav.css';
+
 const tabs = [
 
 {label:"Tutti", value : "Tutti"},
@@ -14,7 +16,7 @@ function Navigation({activeTab, setActiveTab}){
     return (
         <nav className = "navigation">{
             tabs.map((tab) => (
-                <button
+                <button 
                     key={tab.value}
                     className={getTabClass(activeTab === tab.value)}
                     onClick={() => setActiveTab(tab.value)}

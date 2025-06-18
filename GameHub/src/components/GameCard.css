@@ -21,7 +21,7 @@
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  cursor: pointer;
+  
   position: relative;
 }
 
@@ -62,7 +62,7 @@
   font-size: 16px;
   margin: 0 0 1rem 0;
   font-weight: 500;
-  background-color: #9d0bff;
+
 }
 
 .card-p {

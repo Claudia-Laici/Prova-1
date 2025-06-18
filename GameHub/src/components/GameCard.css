@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* GameList Grid Layout */
 .grid {
   display: grid;
@@ -22,6 +28,7 @@
 .game-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  
 }
 
 .game-card img {
@@ -36,6 +43,7 @@
 }
 
 .card-content {
+
   padding: 1.5rem;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
@@ -49,9 +57,24 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.game-card:hover {
+  color: #b0b0b0;
+  font-size: 16px;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  background-color: #9d0bff;
+}
+
+.card-p {
+  color: #b0b0b0;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px;
+}
+
 .genre {
   color: #b0b0b0;
-  font-size: 0.9rem;
+  font-size: 18px;
   margin: 0 0 1rem 0;
   font-weight: 500;
 }
@@ -131,6 +154,7 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

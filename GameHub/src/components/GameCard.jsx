@@ -1,7 +1,12 @@
+import React, { useState } from 'react';
 import './GameCard.css';
 
 const GameCard = ({ gioco }) => {
-  // Funzioni helper
+  const [showDetails, setShowDetails] = useState(false);
+  const toggleDetails = () => {
+    setShowDetails(prev => !prev);
+  };
+
   const getRatingColor = (rating) => {
     if (rating >= 9) return 'excellent';
     if (rating >= 8) return 'good';
@@ -36,12 +41,22 @@ const GameCard = ({ gioco }) => {
   };
 
   return (
-    <div className="game-card">
+    <div className="game-card" onClick={toggleDetails}>
       <img src={gioco.cover} alt={gioco.title} />
       <div className="card-content">
         <h3>{gioco.title}</h3>
-        <p className="genre">Genere: {gioco.genre}</p>
-        
+
+        {showDetails && (
+          <div className="card-p">
+            <p className="genre">Genere: {gioco.genre}</p>
+            <p>Platform: {gioco.platform}</p>
+            <p>Year: {gioco.year}</p>
+            <p>Price: {gioco.price} €</p>
+            <p>Hours played: {gioco.hoursPlayed}</p>
+            <p>Difficulty: {gioco.difficulty}</p>
+          </div>
+        )}
+
         <div className="card-meta">
           <span className={`rating ${getRatingColor(gioco.rating)}`}>
             {gioco.rating}/10

@@ -21,15 +21,15 @@ function App() {
   return (
     <div className="App">
       <Header gamerTag={gamerTag} totalGames={giochi.length} />
-      
+
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
-      <aside>
-        <GameStats giochi={giochi} />
-      </aside>
 
       <h2 className="Card-header">La Mia Libreria Videogiochi</h2>
 
       <GameList giochi={getFilteredGames} />
+
+      <GameStats giochi={giochi} />
+
     </div>
   );
 }

@@ -1,22 +1,91 @@
 .game-stats {
-align-items: center;
-  background: #3c3c3c;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 8px;
-  max-width: 400px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  width: 550px;
+  margin: 20px auto;
 }
 
 .game-stats h2 {
-  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
 }
 
+.game-stats p {
+  font-size: 20px;
+  margin: 15px 0;
+  color: #ffffff;
+}
+
+.game-stats strong {
+  color: #ffffff;
+}
+
+/* Trasforma la lista in un grafico a barre orizzontali */
 .game-stats ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 20px 0;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 .game-stats li {
-  margin-bottom: 4px;
+  position: relative;
+  margin: 10px 0;
+  padding: 12px 15px;
+  background: linear-gradient(90deg, var(--bar-color, #4CAF50) var(--bar-width, 0%), transparent var(--bar-width, 0%));
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-weight: 500;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.game-stats li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Colori per stati diversi */
+.game-stats li:nth-child(1) { --bar-color: #4CAF50; --bar-width: 80%; }
+.game-stats li:nth-child(2) { --bar-color: #FF9800; --bar-width: 60%; }
+.game-stats li:nth-child(3) { --bar-color: #2196F3; --bar-width: 40%; }
+.game-stats li:nth-child(4) { --bar-color: #F44336; --bar-width: 20%; }
+
+
+/* Stile per i numeri importanti */
+.game-stats p:nth-of-type(1) strong:last-child,
+.game-stats p:nth-of-type(3) strong:last-child {
+  color: #ffffff;
+  font-size: 1.3em;
+}
+
+.game-stats p:nth-of-type(4) strong:last-child {
+  color: #2196F3;
+  font-size: 1.2em;
+}
+
+/* Effetto di caricamento per le barre */
+@keyframes loadBar {
+  from { --bar-width: 0%; }
+}
+
+.game-stats li {
+  animation: loadBar 1s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .game-stats {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .game-stats li {
+    font-size: 0.9em;
+  }
 }

@@ -1,0 +1,174 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+}
+
+/* Container principale del componente */
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:100px;
+  min-height: 20vh;
+  box-sizing: border-box;
+}
+
+/* Titolo h2 */
+h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0 0 2rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Pulsante */
+button {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Container dell'immagine - sostituisce gli stili inline */
+div[style*="border"] {
+  background: white !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 1.5rem !important;
+  margin: 0 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Titolo h3 dentro il container dell'immagine */
+h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  text-shadow: none;
+}
+
+
+img[style*="width: 300px"]:hover {
+  transform: scale(1.02);
+}
+
+/* Messaggi di caricamento ed errore */
+div:only-child {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+/* Messaggio di errore specifico */
+div:only-child:contains("Errore") {
+  color: #ff6b6b;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  min-height: auto;
+}
+
+/* Animazione per l'apparizione dell'immagine */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+div[style*="border"] {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  div {
+    padding: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  div[style*="border"] {
+    max-width: 90%;
+    padding: 1rem !important;
+  }
+  
+  img[style*="width: 300px"] {
+    height: 280px !important;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  img[style*="width: 300px"] {
+    height: 250px !important;
+  }
+  
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  div:only-child {
+    font-size: 1.2rem;
+  }
+}
